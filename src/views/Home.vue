@@ -22,11 +22,11 @@
               >
                 <v-spacer></v-spacer>
                 <h3 v-if="item.l3" class="mb-5 text-center">
-                  {{ `第 ${item.l3} 堂課第三次複習 【練習自己造句或用自己的話解釋單字】` }}
+                  {{ `Unit ${item.l3} 第三次複習 【練習自己造句或用自己的話解釋單字】` }}
                 </h3>
-                <h3 v-if="item.l2" class="mb-5 text-center">{{ `第 ${item.l2} 堂課第二次複習 【寫填空題】` }}</h3>
-                <h3 v-if="item.l1" class="mb-5 text-center">{{ `第 ${item.l1} 堂課第一次複習 【寫是非題】` }}</h3>
-                <h2 v-if="item.l0" class="mb-5 text-center">{{ `觀看影片學習第 ${item.l0} 堂課` }}</h2>
+                <h3 v-if="item.l2" class="mb-5 text-center">{{ `Unit ${item.l2} 第二次複習 【寫填空題】` }}</h3>
+                <h3 v-if="item.l1" class="mb-5 text-center">{{ `Unit ${item.l1} 第一次複習 【寫是非題】` }}</h3>
+                <h2 v-if="item.l0" class="mb-5 text-center">{{ `觀看影片學習 Unit ${item.l0}` }}</h2>
                 <v-spacer></v-spacer>
               </div>
               <h2 style="height: 170px" v-else class="d-flex justify-center align-center">
