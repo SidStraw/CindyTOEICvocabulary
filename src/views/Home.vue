@@ -50,7 +50,7 @@
 <script>
 // @ is an alias to /src
 import reviewData from '@/../CindyReviewSchedule.json'
-const yesterday = new Date(Date.now() - 1000 * 60 * 60 * 24)
+const yesterday = new Date(Date.now() - 1000 * 60 * 60 * 24).toLocaleDateString('zh').replace(/\/(\d)\//, '/0$1/')
 
 export default {
   name: 'Home',
@@ -58,10 +58,7 @@ export default {
   data() {
     return {
       reviewData,
-      yesterday: yesterday
-        .toISOString()
-        .replace(/-/g, '/')
-        .replace(/T.*$/, ''),
+      yesterday,
     }
   },
   computed: {
