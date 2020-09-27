@@ -12,7 +12,7 @@
 
             <v-divider class="mx-4"></v-divider>
 
-            <v-card-title class="justify-center"> 本日學習計畫 </v-card-title>
+            <v-card-title class="justify-center"> {{ itemDayName(index) }}學習計畫 </v-card-title>
 
             <v-card-text class="pb-0">
               <div
@@ -73,6 +73,18 @@ export default {
         this.reviewData[yesterdayIndex + 2],
       ]
       return datas
+    },
+  },
+  methods: {
+    itemDayName(index) {
+      switch (index) {
+        case 0:
+          return '昨日'
+        case 1:
+          return '今日'
+        case 2:
+          return '明日'
+      }
     },
   },
 }
