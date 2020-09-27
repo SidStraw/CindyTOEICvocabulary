@@ -2,12 +2,12 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <v-toolbar-title>今彩539</v-toolbar-title>
+        <v-toolbar-title>Cindy 情境式多益單字課 複習進度表</v-toolbar-title>
       </div>
 
-      <v-spacer></v-spacer>
+      <!-- <v-spacer></v-spacer>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> -->
       <!-- <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
