@@ -1,11 +1,11 @@
 <template>
-  <v-container class="home">
-    <v-row class="page-container">
+  <v-container class="home page-container">
+    <v-row class="page-row">
       <template v-for="(item, index) in showData">
-        <v-col :key="item.date" class="card d-flex align-center" cols="12" sm="6" md="4">
+        <v-col :key="item.date" class="card d-flex align-center" cols="12" md="4">
           <v-card class="mx-auto" max-width="320" :class="index !== 1 && 'opacity'">
             <v-img
-              v-if="$vuetify.breakpoint.smAndUp || index === 1"
+              v-if="$vuetify.breakpoint.mdAndUp || index === 1"
               height="250"
               src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/YaGiJVrUTUWhPHUBlpuN"
             />
@@ -15,13 +15,19 @@
             <v-card-title class="justify-center"> 本日學習計畫 </v-card-title>
 
             <v-card-text class="pb-0">
-              <div style="height: 170px" v-if="item.l0 || item.l1 || item.l2 || item.l3">
+              <div
+                style="height: 170px"
+                v-if="item.l0 || item.l1 || item.l2 || item.l3"
+                class="d-flex flex-column justify-center"
+              >
+                <v-spacer></v-spacer>
                 <h3 v-if="item.l3" class="mb-5 text-center">
                   {{ `第 ${item.l3} 堂課第三次複習 【練習自己造句或用自己的話解釋單字】` }}
                 </h3>
                 <h3 v-if="item.l2" class="mb-5 text-center">{{ `第 ${item.l2} 堂課第二次複習 【寫填空題】` }}</h3>
                 <h3 v-if="item.l1" class="mb-5 text-center">{{ `第 ${item.l1} 堂課第一次複習 【寫是非題】` }}</h3>
                 <h2 v-if="item.l0" class="mb-5 text-center">{{ `觀看影片學習第 ${item.l0} 堂課` }}</h2>
+                <v-spacer></v-spacer>
               </div>
               <h2 style="height: 170px" v-else class="d-flex justify-center align-center">
                 今天就好好休息一下吧
@@ -79,7 +85,10 @@ export default {
 .page-container {
   min-height: calc(100vh - 64px);
 }
-@media screen and (min-width: 588px) {
+.page-row {
+  min-height: calc(100vh - 64px - 24px);
+}
+@media screen and (min-width: 960px) {
   .card {
     &:first-child,
     &:last-child {
