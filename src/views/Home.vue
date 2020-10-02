@@ -29,9 +29,7 @@
                 <h2 v-if="item.l0" class="mb-5 text-center">{{ `觀看影片學習 Unit ${item.l0}` }}</h2>
                 <v-spacer></v-spacer>
               </div>
-              <h2 style="height: 170px" v-else class="d-flex justify-center align-center">
-                今天就好好休息一下吧
-              </h2>
+              <h2 style="height: 170px" v-else class="d-flex justify-center align-center">今天就好好休息一下吧</h2>
             </v-card-text>
 
             <v-card-actions>
@@ -50,7 +48,10 @@
 <script>
 // @ is an alias to /src
 import reviewData from '@/../CindyReviewSchedule.json'
-const yesterday = new Date(Date.now() - 1000 * 60 * 60 * 24).toLocaleDateString('zh').replace(/\/(\d)\//, '/0$1/')
+const yesterday = new Date(Date.now() - 1000 * 60 * 60 * 24)
+  .toLocaleDateString('zh')
+  .replace(/\/(\d)\//, '/0$1/')
+  .replace(/\/(\d)$/, '/0$1')
 
 export default {
   name: 'Home',
